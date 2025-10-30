@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Messaging Pro | Secure Communication</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe"></i>
+                <span>Universe Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" id="nav-home">Home</a>
+                <a href="#" id="nav-about">About</a>
+                <a href="#" id="nav-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home-section" class="section active">
+        <div class="container">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Universe Messaging Pro</h1>
+                    <p class="hero-subtitle">End-to-End Encrypted Communication with Advanced Features</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>AES-256 Encryption</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Real-time Messaging</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-image"></i>
+                            <span>Media Sharing</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-microphone"></i>
+                            <span>Voice Messages</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-container">
+                    <div class="auth-card">
+                        <div class="auth-tabs">
+                            <button id="login-tab" class="auth-tab active">Login</button>
+                            <button id="register-tab" class="auth-tab">Register</button>
+                        </div>
+                        
+                        <form id="auth-form" class="auth-form">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" required>
+                                <small class="form-text">We'll send a verification code to this email</small>
+                            </div>
+                            
+                            <div id="verification-field" class="form-group hidden">
+                                <label for="verification-code">Verification Code</label>
+                                <input type="text" id="verification-code" placeholder="Enter 6-digit code">
+                                <button type="button" id="resend-code" class="text-button">Resend Code</button>
+                            </div>
+                            
+                            <div id="username-field" class="form-group hidden">
+                                <label for="username">Choose Username</label>
+                                <input type="text" id="username">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" required>
+                            </div>
+                            
+                            <button type="submit" id="auth-submit" class="btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about-section" class="section hidden">
+        <div class="container">
+            <div class="about-container">
+                <h1>About Universe Messaging Pro</h1>
+                <div class="about-content">
+                    <div class="founder-card">
+                        <div class="founder-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h2>Abhishnav CV</h2>
+                        <p class="founder-title">Founder & Developer</p>
+                        <p class="founder-bio">
+                            Integrated PhD Student at Kerala School of Mathematics
+                        </p>
+                        <div class="contact-info">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:abhishnavabhi4038@gmail.com">abhishnavabhi4038@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>About This Project</h3>
+                        <p>
+                            Universe Messaging Pro is a secure communication platform built with advanced 
+                            encryption algorithms and modern web technologies. It ensures your conversations 
+                            remain private and secure.
+                        </p>
+                        
+                        <div class="tech-stack">
+                            <h4>Technical Features</h4>
+                            <ul>
+                                <li>AES-256 Encryption for all messages</li>
+                                <li>Real email verification system</li>
+                                <li>Real-time online status tracking</li>
+                                <li>Media file sharing with encryption</li>
+                                <li>Voice message recording and playback</li>
+                                <li>Emoji and GIF integration</li>
+                                <li>Modern, responsive UI design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Messaging Section -->
+    <div id="messaging-section" class="section hidden">
+        <div class="container">
+            <div class="chat-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="sidebar-header">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="user-info">
+                                <span id="current-user">User</span>
+                                <span class="user-status online">Online</span>
+                            </div>
+                        </div>
+                        <button id="logout-btn" class="btn-icon">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="search-container">
+                        <input type="text" id="search-contact" placeholder="Search or add contact...">
+                        <button id="add-contact-btn" class="btn-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="contacts-list">
+                        <h3>Contacts</h3>
+                        <ul id="contacts-list"></ul>
+                    </div>
+                </div>
+                
+                <!-- Chat Area -->
+                <div class="chat-area">
+                    <div class="chat-header">
+                        <div class="chat-partner">
+                            <div class="partner-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="partner-info">
+                                <span id="chat-with">Select a contact</span>
+                                <span id="partner-status" class="partner-status">Offline</span>
+                            </div>
+                        </div>
+                        <div class="chat-actions">
+                            <button id="voice-call-btn" class="btn-icon" disabled>
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button id="video-call-btn" class="btn-icon" disabled>
+                                <i class="fas fa-video"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="messages-container" class="messages-container">
+                        <div class="welcome-message">
+                            <i class="fas fa-comments"></i>
+                            <h3>Welcome to Universe Pro</h3>
+                            <p>Select a contact to start a secure conversation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="message-input-container">
+                        <div class="input-actions">
+                            <button id="emoji-btn" class="btn-icon">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                            <button id="gif-btn" class="btn-icon">
+                                <i class="fas fa-file-image"></i>
+                            </button>
+                            <button id="attachment-btn" class="btn-icon">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="message-input-wrapper">
+                            <input type="text" id="message-input" placeholder="Type a message..." disabled>
+                            <button id="voice-message-btn" class="btn-icon voice-btn">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                        
+                        <button id="send-btn" class="btn-primary" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Emoji Picker -->
+                    <div id="emoji-picker" class="emoji-picker hidden">
+                        <div class="emoji-categories">
+                            <button class="emoji-category active" data-category="smileys">😀</button>
+                            <button class="emoji-category" data-category="people">👋</button>
+                            <button class="emoji-category" data-category="animals">🐻</button>
+                            <button class="emoji-category" data-category="food">🍕</button>
+                            <button class="emoji-category" data-category="travel">🚗</button>
+                            <button class="emoji-category" data-category="objects">💡</button>
+                            <button class="emoji-category" data-category="symbols">❤️</button>
+                            <button class="emoji-category" data-category="flags">🎌</button>
+                        </div>
+                        <div class="emoji-container" id="emoji-container">
+                            <!-- Emojis will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- GIF Picker -->
+                    <div id="gif-picker" class="gif-picker hidden">
+                        <div class="gif-search">
+                            <input type="text" id="gif-search" placeholder="Search GIFs...">
+                            <button id="gif-search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="gif-container" id="gif-container">
+                            <!-- GIFs will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Recorder -->
+    <div id="voice-recorder" class="voice-recorder hidden">
+        <div class="voice-recorder-content">
+            <div class="recording-indicator">
+                <div class="pulse"></div>
+                <span>Recording...</span>
+            </div>
+            <div class="recording-timer">00:00</div>
+            <button id="stop-recording" class="btn-danger">
+                <i class="fas fa-stop"></i> Stop
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
