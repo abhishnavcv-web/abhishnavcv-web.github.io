@@ -3,7 +3,180 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abhishnav C V — CV</title>
+  <title>Abhishnav C V — CV</title><!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abhishnav C V — Academic Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #900C3F;
+      --accent-color: #155E75;
+      --text-color: #1a1a1a;
+      --bg-color: #f9f9fb;
+      --muted: #555;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: white;
+      border-bottom: 2px solid #eee;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .name h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 28px;
+      margin: 0;
+      color: var(--main-color);
+    }
+
+    .name p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 10px;
+    }
+
+    main {
+      padding: 30px 40px;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      color: var(--main-color);
+      margin-top: 40px;
+    }
+
+    .bio {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .bio img {
+      width: 160px;
+      height: 160px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .bio p {
+      flex: 1;
+      font-size: 16px;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="name">
+      <h1>Abhishnav C V</h1>
+      <p>Integrated PhD Candidate, Kerala School of Mathematics</p>
+    </div>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <main>
+      <section class="bio">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&cs=tinysrgb" alt="Profile photo">
+        <p>
+          I am an Integrated PhD student at the <strong>Kerala School of Mathematics</strong>. My research interests lie in the intersection of <strong>mathematical analysis, data science, and machine learning</strong>. I am passionate about exploring mathematical structures behind AI models and computational methods that advance data-driven research.
+        </p>
+      </section>
+
+      <section id="research" class="section">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Functional analysis and its applications in data science</li>
+          <li>Optimization and mathematical foundations of machine learning</li>
+          <li>Neural differential equations and probabilistic modeling</li>
+        </ul>
+      </section>
+
+      <section id="publications" class="section">
+        <h2>Publications & Projects</h2>
+        <ul>
+          <li><strong>Neural ODE Experiments</strong> — Applied ODE techniques to deep learning to study continuous-depth models.</li>
+          <li><strong>Probabilistic Inference Toolkit</strong> — Implemented MCMC variants for small-scale Bayesian analysis.</li>
+          <li><strong>Mathematical Modeling in ML</strong> — Developing models that bridge rigorous math and empirical AI results.</li>
+        </ul>
+      </section>
+
+      <section id="teaching" class="section">
+        <h2>Teaching & Mentorship</h2>
+        <ul>
+          <li>Teaching Assistant for undergraduate mathematics courses.</li>
+          <li>Mentored students in Python programming and introductory machine learning.</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <p>Location: Kerala, India</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    © 2025 Abhishnav C V · Academic Homepage
+  </footer>
+</body>
+</html>
   <meta name="description" content="Abhishnav C V — Curriculum Vitae / Portfolio" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
