@@ -1,436 +1,265 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Abhishnav C V — CV</title><!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abhishnav C V — Academic Homepage</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishnav C V, IPh.D.</title>
   <style>
-    :root {
-      --main-color: #900C3F;
-      --accent-color: #155E75;
-      --text-color: #1a1a1a;
-      --bg-color: #f9f9fb;
-      --muted: #555;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
+      color: #222;
     }
 
+    /* Header */
     header {
-      background-color: white;
-      border-bottom: 2px solid #eee;
+      background-color: #0d2940;
+      color: #f5b400;
       padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
-    .name h1 {
-      font-family: 'Merriweather', serif;
-      font-size: 28px;
+    header h1 {
       margin: 0;
-      color: var(--main-color);
+      font-size: 1.8em;
+      font-weight: 800;
     }
 
-    .name p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
+    header p {
+      margin: 4px 0 0;
+      color: #ddd;
+      font-size: 0.95em;
+      line-height: 1.4em;
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: #f5b400;
+      padding: 10px 40px;
+      font-weight: bold;
     }
 
     nav a {
-      margin-left: 20px;
+      color: #0d2940;
       text-decoration: none;
-      color: var(--accent-color);
-      font-weight: 600;
+      margin-right: 20px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
 
+    .search-box {
+      float: right;
+      margin-top: -3px;
+    }
+
+    .search-box input {
+      padding: 4px 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    /* Main layout */
     .container {
-      max-width: 900px;
+      display: flex;
       margin: 40px auto;
-      padding: 0 20px;
-      background: white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border-radius: 10px;
+      max-width: 1100px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    aside {
+      background-color: #fafafa;
+      border-right: 2px solid #f5b400;
+      width: 250px;
+      padding: 25px;
+    }
+
+    aside h3 {
+      color: #0d2940;
+      text-transform: uppercase;
+      font-size: 0.85em;
+      letter-spacing: 0.5px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding-left: 15px;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    aside ul li {
+      margin-bottom: 8px;
+    }
+
+    aside ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    aside ul li a:hover {
+      text-decoration: underline;
     }
 
     main {
-      padding: 30px 40px;
+      flex: 1;
+      padding: 40px;
     }
 
-    h2 {
-      font-family: 'Merriweather', serif;
-      color: var(--main-color);
+    main h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #f5b400;
+      font-weight: 700;
+    }
+
+    .profile-pic {
+      border: 3px solid #f5b400;
+      border-radius: 6px;
+      width: 160px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .intro-text {
+      flex: 1;
+      font-size: 0.95em;
+      line-height: 1.6em;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
       margin-top: 40px;
     }
 
-    .bio {
+    .circle-btn {
+      border: 2px solid #f5b400;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      text-align: center;
       display: flex;
-      align-items: flex-start;
-      gap: 30px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: bold;
+      color: #0d2940;
+      background-color: white;
+      transition: all 0.2s ease;
     }
 
-    .bio img {
-      width: 160px;
-      height: 160px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
-
-    .bio p {
-      flex: 1;
-      font-size: 16px;
-    }
-
-    .section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .section li {
-      margin-bottom: 10px;
+    .circle-btn:hover {
+      background-color: #f5b400;
+      color: #0d2940;
+      cursor: pointer;
     }
 
     footer {
       text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 40px;
-      padding: 20px 0;
+      font-size: 0.85em;
+      color: #777;
+      padding: 30px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="name">
-      <h1>Abhishnav C V</h1>
-      <p>Integrated PhD Candidate, Kerala School of Mathematics</p>
-    </div>
-    <nav>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Abhishnav C V, IPh.D.</h1>
+    <p>
+      Kerala School of Mathematics<br />
+      Kozhikode<br />
+      Kunnamangalam PO<br />
+      Kozhikode, Kerala - 673571
+    </p>
   </header>
 
+  <nav>
+    <a href="#">ABOUT ME</a>
+    <a href="#">MATH STUFF</a>
+    <a href="#">WORKSHOPS & PRESENTATIONS</a>
+    <a href="#">THE SOCIAL NONSENSE BOOK</a>
+    <a href="#">OTHER PAGES</a>
+    <a href="#">FUN STUFF</a>
+    <a href="#">THE BLOG</a>
+    <a href="#" class="search-box"><input type="text" placeholder="Search..." /></a>
+  </nav>
+
   <div class="container">
+    <aside>
+      <h3>ABOUT ME</h3>
+      <ul>
+        <li><a href="#">My CV</a></li>
+        <li><a href="#">My Schedule</a></li>
+        <li><a href="#">Past Courses</a></li>
+        <li><a href="#">Expositions</a></li>
+      </ul>
+
+      <h3>WORKSHOPS & PRESENTATIONS</h3>
+      <ul>
+        <li><a href="#">OK Chat GPT: Using AI without Applying?</a></li>
+        <li><a href="#">Fast Food Joyce!</a></li>
+        <li><a href="#"><b>Social Nonsense Workshop</b></a></li>
+      </ul>
+
+      <h3>FUN STUFF</h3>
+      <ul>
+        <li><a href="#">Essays and Reviews</a></li>
+        <li><a href="#">Hard Words to Spell</a></li>
+        <li><a href="#">Cosmic Euches</a></li>
+      </ul>
+    </aside>
+
     <main>
-      <section class="bio">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&cs=tinysrgb" alt="Profile photo">
-        <p>
-          I am an Integrated PhD student at the <strong>Kerala School of Mathematics</strong>. My research interests lie in the intersection of <strong>mathematical analysis, data science, and machine learning</strong>. I am passionate about exploring mathematical structures behind AI models and computational methods that advance data-driven research.
-        </p>
-      </section>
+      <h2>Hi! I'm <span class="highlight">Abhishnav C V</span></h2>
+      <div class="intro">
+        <div>
+          <img src="https://via.placeholder.com/160x160.png?text=Photo" alt="Abhishnav C V" class="profile-pic" />
+          <p style="font-size:0.8em;color:#555;">This is me.</p>
+        </div>
+        <div class="intro-text">
+          <p>
+            Hey, I’m glad you’ve arrived. I’ve gathered years of academic and creative work under one roof.
+            You can also access my earlier pages from here.
+          </p>
+          <p>
+            Here’s my “About Me” paragraph, written in the third person because it looks more professional.
+          </p>
+          <p>
+            Abhishnav C V is a researcher at the Kerala School of Mathematics. His interests include mathematical
+            transforms, pedagogy, and creative exposition. He is also passionate about teaching and bridging
+            abstract theory with intuition.
+          </p>
+          <p>
+            He has facilitated lectures and workshops across India and enjoys connecting mathematics with
+            storytelling, clarity, and humor.
+          </p>
+        </div>
+      </div>
 
-      <section id="research" class="section">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Functional analysis and its applications in data science</li>
-          <li>Optimization and mathematical foundations of machine learning</li>
-          <li>Neural differential equations and probabilistic modeling</li>
-        </ul>
-      </section>
-
-      <section id="publications" class="section">
-        <h2>Publications & Projects</h2>
-        <ul>
-          <li><strong>Neural ODE Experiments</strong> — Applied ODE techniques to deep learning to study continuous-depth models.</li>
-          <li><strong>Probabilistic Inference Toolkit</strong> — Implemented MCMC variants for small-scale Bayesian analysis.</li>
-          <li><strong>Mathematical Modeling in ML</strong> — Developing models that bridge rigorous math and empirical AI results.</li>
-        </ul>
-      </section>
-
-      <section id="teaching" class="section">
-        <h2>Teaching & Mentorship</h2>
-        <ul>
-          <li>Teaching Assistant for undergraduate mathematics courses.</li>
-          <li>Mentored students in Python programming and introductory machine learning.</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p>Location: Kerala, India</p>
-      </section>
+      <div class="buttons">
+        <div class="circle-btn">Mathematical<br />Thinking</div>
+        <div class="circle-btn">Creative<br />Writing</div>
+        <div class="circle-btn">Workshops<br />& Talks</div>
+        <div class="circle-btn">The Social<br />Nonsense Book</div>
+      </div>
     </main>
   </div>
 
   <footer>
-    © 2025 Abhishnav C V · Academic Homepage
+    &copy; 2025 Abhishnav C V. All rights reserved.
   </footer>
-</body>
-</html>
-  <meta name="description" content="Abhishnav C V — Curriculum Vitae / Portfolio" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1: #0f172a; /* deep navy */
-      --bg2: #081127; /* almost-black */
-      --accent1: #7C3AED; /* purple */
-      --accent2: #06B6D4; /* teal */
-      --glass: rgba(255,255,255,0.06);
-      --muted: rgba(255,255,255,0.7);
-      --card-radius: 18px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef8}
-
-    /* subtle animated gradient background */
-    .bg-animated{
-      position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
-      background: radial-gradient(600px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
-                  radial-gradient(500px 350px at 90% 80%, rgba(6,182,212,0.08), transparent 12%);
-      animation: floatBG 15s ease-in-out infinite;
-      mix-blend-mode: screen;
-    }
-    @keyframes floatBG{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
-
-    .container{position:relative;z-index:2;max-width:1100px;margin:48px auto;padding:28px;}
-
-    header{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{
-      width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:20px;
-      background:linear-gradient(135deg,var(--accent1),var(--accent2));box-shadow:0 6px 30px rgba(12,15,30,0.6);
-    }
-    .name{line-height:1}
-    .name h1{font-size:20px;margin:0}
-    .name p{margin:0;font-size:13px;color:var(--muted)}
-
-    nav{display:flex;gap:10px;align-items:center}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer}
-    .btn:hover{transform:translateY(-3px)}
-
-    main{display:grid;grid-template-columns:360px 1fr;gap:28px}
-
-    /* left column */
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:22px;border-radius:var(--card-radius);backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    .avatar{width:100%;aspect-ratio:1/1;border-radius:14px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));overflow:hidden}
-    .avatar img{width:110%;transform:translateY(-6%)}
-
-    .section{margin-top:18px}
-    .muted{color:var(--muted);font-size:13px}
-
-    .skill{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:10px 0}
-    .skill .track{height:9px;background:rgba(255,255,255,0.06);border-radius:999px;flex:1;margin-left:12px;overflow:hidden}
-    .skill .track > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));}
-
-    /* right column */
-    .hero{padding:18px;border-radius:14px}
-    .title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-    .title h2{margin:0;font-size:28px}
-    .headline{margin-top:6px;color:var(--muted)}
-
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
-
-    .timeline{margin-top:18px;border-left:2px dashed rgba(255,255,255,0.04);padding-left:18px}
-    .item{margin-bottom:16px}
-    .item h4{margin:0;font-size:16px}
-    .item time{font-size:13px;color:var(--muted)}
-    .item p{margin:8px 0 0;color:rgba(230,238,248,0.9)}
-
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
-    .project h5{margin:0 0 6px 0}
-    .cta-row{display:flex;gap:12px;margin-top:18px}
-    .primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#061023;padding:12px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 16px;border-radius:12px;color:var(--muted);font-weight:700}
-
-    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* small screens */
-    @media (max-width:900px){main{grid-template-columns:1fr;}.logo{width:54px;height:54px}.container{padding:16px;margin:18px auto}}
-  </style>
-</head>
-<body>
-  <div class="bg-animated" aria-hidden></div>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden>AC</div>
-        <div class="name">
-          <h1>Abhishnav C V</h1>
-          <p>Integrated PhD · Data Science · Machine Learning</p>
-        </div>
-      </div>
-      <nav>
-        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
-        <button class="btn" onclick="downloadCV()">Download CV</button>
-      </nav>
-    </header>
-
-    <main>
-      <aside class="card">
-        <div class="avatar">
-          <!-- replace src with your photo -->
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&cs=tinysrgb" alt="Avatar">
-        </div>
-
-        <div class="section">
-          <h3>About</h3>
-          <p class="muted">PhD student at Kerala School of Mathematics. Strong math background, learning Python, focused on data science, ML & AI. Interested in research and applied machine learning.</p>
-        </div>
-
-        <div class="section">
-          <h3>Contact</h3>
-          <p class="muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-          <p class="muted">Location: Kerala, India</p>
-        </div>
-
-        <div class="section">
-          <h3>Skills</h3>
-          <div class="skill"><strong>Python</strong><div class="track"><i style="width:90%"></i></div></div>
-          <div class="skill"><strong>Machine Learning</strong><div class="track"><i style="width:82%"></i></div></div>
-          <div class="skill"><strong>Mathematics</strong><div class="track"><i style="width:95%"></i></div></div>
-          <div class="skill"><strong>Data Analysis</strong><div class="track"><i style="width:78%"></i></div></div>
-        </div>
-
-        <div class="section">
-          <h3>Languages</h3>
-          <div class="chips">
-            <div class="chip">English</div>
-            <div class="chip">Malayalam</div>
-            <div class="chip">Hindi</div>
-          </div>
-        </div>
-      </aside>
-
-      <section>
-        <div class="card hero">
-          <div class="title">
-            <div>
-              <h2>Hi — I'm <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;">Abhishnav</span>.</h2>
-              <p class="headline">I build models that turn math into insights. Currently pursuing an Integrated PhD at Kerala School of Mathematics.</p>
-            </div>
-            <div style="text-align:right">
-              <div class="muted">Open to internships & collaborations</div>
-              <div style="margin-top:12px">⭐  Research · ML · Python</div>
-            </div>
-          </div>
-
-          <div class="chips" aria-hidden>
-            <div class="chip">Research</div>
-            <div class="chip">Deep Learning</div>
-            <div class="chip">Probabilistic Modelling</div>
-            <div class="chip">Optimization</div>
-          </div>
-
-          <div class="timeline">
-            <div class="item">
-              <h4>Integrated PhD — Kerala School of Mathematics</h4>
-              <time>2024 — Present</time>
-              <p>Working on topics at the intersection of mathematics and machine learning.</p>
-            </div>
-
-            <div class="item">
-              <h4>B.Sc / M.Sc (details)</h4>
-              <time>Previously</time>
-              <p>Strong foundation in analysis, algebra and applied mathematics.</p>
-            </div>
-          </div>
-
-          <div class="projects">
-            <div class="project">
-              <h5>Project — Neural ODE experiments</h5>
-              <p class="muted">Applied ODE techniques to deep learning; wrote experiments and reproducible code.</p>
-            </div>
-            <div class="project">
-              <h5>Project — Probabilistic inference toolkit</h5>
-              <p class="muted">Implemented MCMC variants and small-scale Bayesian models for comparison.</p>
-            </div>
-            <div class="project">
-              <h5>Project — Data pipeline</h5>
-              <p class="muted">End-to-end data ingestion, cleaning and basic modeling for a research dataset.</p>
-            </div>
-          </div>
-
-          <div class="cta-row">
-            <button class="primary" onclick="downloadCV()">Download CV</button>
-            <button class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:18px">
-          <h3>Experience & Education</h3>
-          <div class="item">
-            <h4>Researcher / Student</h4>
-            <time>2024 — Present</time>
-            <p>Integrated PhD candidate working on mathematical foundations for ML.</p>
-          </div>
-
-          <div class="item">
-            <h4>Teaching / Assistant roles</h4>
-            <time>Past</time>
-            <p>Assisted undergraduate courses and mentored students in mathematics.</p>
-          </div>
-        </div>
-
-        <div id="contact" class="card" style="margin-top:18px">
-          <h3>Contact</h3>
-          <p class="muted">Want the source files, a tailored CV, or to collaborate? Send a note.</p>
-          <form onsubmit="sendMail(event)">
-            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
-              <input name="name" placeholder="Your name" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-              <input name="email" placeholder="Your email" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-            </div>
-            <textarea name="message" placeholder="Message" required style="width:100%;margin-top:8px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-height:120px"></textarea>
-            <div style="display:flex;gap:8px;margin-top:10px">
-              <button class="primary" type="submit">Send</button>
-              <button class="ghost" type="button" onclick="copyEmail()">Copy Email</button>
-            </div>
-          </form>
-          <footer>Or email me directly at <a href="mailto:youremail@example.com">youremail@example.com</a></footer>
-        </div>
-      </section>
-    </main>
-
-    <footer style="opacity:0.9">Built with ❤️ — Want this exported as a PDF or edited? Tell me what to change.</footer>
-  </div>
-
-  <script>
-    function downloadCV(){
-      // placeholder: replace 'resume.pdf' with actual path or trigger server response
-      const link = document.createElement('a');
-      link.href = 'resume.pdf';
-      link.download = 'Abhishnav_CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-    }
-
-    function copyEmail(){
-      navigator.clipboard?.writeText('youremail@example.com').then(()=>alert('Email copied to clipboard'))
-    }
-
-    function sendMail(e){
-      e.preventDefault();
-      const form = e.target;
-      const name = encodeURIComponent(form.name.value);
-      const email = encodeURIComponent(form.email.value);
-      const message = encodeURIComponent(form.message.value);
-      const subject = encodeURIComponent('Contact from website — ' + name);
-      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=From:%20${name}%20<${email}>%0A%0A${message}`;
-    }
-  </script>
 </body>
 </html>
