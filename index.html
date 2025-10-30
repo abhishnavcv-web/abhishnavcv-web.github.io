@@ -1,279 +1,263 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universe Messaging Pro | Secure Communication</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abhishnav C V — CV</title>
+  <meta name="description" content="Abhishnav C V — Curriculum Vitae / Portfolio" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f172a; /* deep navy */
+      --bg2: #081127; /* almost-black */
+      --accent1: #7C3AED; /* purple */
+      --accent2: #06B6D4; /* teal */
+      --glass: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.7);
+      --card-radius: 18px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef8}
+
+    /* subtle animated gradient background */
+    .bg-animated{
+      position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+      background: radial-gradient(600px 400px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
+                  radial-gradient(500px 350px at 90% 80%, rgba(6,182,212,0.08), transparent 12%);
+      animation: floatBG 15s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes floatBG{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+
+    .container{position:relative;z-index:2;max-width:1100px;margin:48px auto;padding:28px;}
+
+    header{display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:64px;height:64px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:20px;
+      background:linear-gradient(135deg,var(--accent1),var(--accent2));box-shadow:0 6px 30px rgba(12,15,30,0.6);
+    }
+    .name{line-height:1}
+    .name h1{font-size:20px;margin:0}
+    .name p{margin:0;font-size:13px;color:var(--muted)}
+
+    nav{display:flex;gap:10px;align-items:center}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.08);padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer}
+    .btn:hover{transform:translateY(-3px)}
+
+    main{display:grid;grid-template-columns:360px 1fr;gap:28px}
+
+    /* left column */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:22px;border-radius:var(--card-radius);backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .avatar{width:100%;aspect-ratio:1/1;border-radius:14px;display:grid;place-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));overflow:hidden}
+    .avatar img{width:110%;transform:translateY(-6%)}
+
+    .section{margin-top:18px}
+    .muted{color:var(--muted);font-size:13px}
+
+    .skill{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:10px 0}
+    .skill .track{height:9px;background:rgba(255,255,255,0.06);border-radius:999px;flex:1;margin-left:12px;overflow:hidden}
+    .skill .track > i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2));}
+
+    /* right column */
+    .hero{padding:18px;border-radius:14px}
+    .title{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+    .title h2{margin:0;font-size:28px}
+    .headline{margin-top:6px;color:var(--muted)}
+
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+    .timeline{margin-top:18px;border-left:2px dashed rgba(255,255,255,0.04);padding-left:18px}
+    .item{margin-bottom:16px}
+    .item h4{margin:0;font-size:16px}
+    .item time{font-size:13px;color:var(--muted)}
+    .item p{margin:8px 0 0;color:rgba(230,238,248,0.9)}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+    .project h5{margin:0 0 6px 0}
+    .cta-row{display:flex;gap:12px;margin-top:18px}
+    .primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#061023;padding:12px 16px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 16px;border-radius:12px;color:var(--muted);font-weight:700}
+
+    footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* small screens */
+    @media (max-width:900px){main{grid-template-columns:1fr;}.logo{width:54px;height:54px}.container{padding:16px;margin:18px auto}}
+  </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-globe"></i>
-                <span>Universe Pro</span>
-            </div>
-            <div class="nav-links">
-                <a href="#" id="nav-home">Home</a>
-                <a href="#" id="nav-about">About</a>
-                <a href="#" id="nav-contact">Contact</a>
-            </div>
+  <div class="bg-animated" aria-hidden></div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>AC</div>
+        <div class="name">
+          <h1>Abhishnav C V</h1>
+          <p>Integrated PhD · Data Science · Machine Learning</p>
         </div>
-    </nav>
+      </div>
+      <nav>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+        <button class="btn" onclick="downloadCV()">Download CV</button>
+      </nav>
+    </header>
 
-    <!-- Home Section -->
-    <div id="home-section" class="section active">
-        <div class="container">
-            <div class="hero-section">
-                <div class="hero-content">
-                    <h1>Universe Messaging Pro</h1>
-                    <p class="hero-subtitle">End-to-End Encrypted Communication with Advanced Features</p>
-                    <div class="hero-features">
-                        <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>AES-256 Encryption</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <span>Real-time Messaging</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-image"></i>
-                            <span>Media Sharing</span>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-microphone"></i>
-                            <span>Voice Messages</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="auth-container">
-                    <div class="auth-card">
-                        <div class="auth-tabs">
-                            <button id="login-tab" class="auth-tab active">Login</button>
-                            <button id="register-tab" class="auth-tab">Register</button>
-                        </div>
-                        
-                        <form id="auth-form" class="auth-form">
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" required>
-                                <small class="form-text">We'll send a verification code to this email</small>
-                            </div>
-                            
-                            <div id="verification-field" class="form-group hidden">
-                                <label for="verification-code">Verification Code</label>
-                                <input type="text" id="verification-code" placeholder="Enter 6-digit code">
-                                <button type="button" id="resend-code" class="text-button">Resend Code</button>
-                            </div>
-                            
-                            <div id="username-field" class="form-group hidden">
-                                <label for="username">Choose Username</label>
-                                <input type="text" id="username">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" id="password" required>
-                            </div>
-                            
-                            <button type="submit" id="auth-submit" class="btn-primary">Login</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <main>
+      <aside class="card">
+        <div class="avatar">
+          <!-- replace src with your photo -->
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&cs=tinysrgb" alt="Avatar">
         </div>
-    </div>
 
-    <!-- About Section -->
-    <div id="about-section" class="section hidden">
-        <div class="container">
-            <div class="about-container">
-                <h1>About Universe Messaging Pro</h1>
-                <div class="about-content">
-                    <div class="founder-card">
-                        <div class="founder-avatar">
-                            <i class="fas fa-user-graduate"></i>
-                        </div>
-                        <h2>Abhishnav CV</h2>
-                        <p class="founder-title">Founder & Developer</p>
-                        <p class="founder-bio">
-                            Integrated PhD Student at Kerala School of Mathematics
-                        </p>
-                        <div class="contact-info">
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:abhishnavabhi4038@gmail.com">abhishnavabhi4038@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-info">
-                        <h3>About This Project</h3>
-                        <p>
-                            Universe Messaging Pro is a secure communication platform built with advanced 
-                            encryption algorithms and modern web technologies. It ensures your conversations 
-                            remain private and secure.
-                        </p>
-                        
-                        <div class="tech-stack">
-                            <h4>Technical Features</h4>
-                            <ul>
-                                <li>AES-256 Encryption for all messages</li>
-                                <li>Real email verification system</li>
-                                <li>Real-time online status tracking</li>
-                                <li>Media file sharing with encryption</li>
-                                <li>Voice message recording and playback</li>
-                                <li>Emoji and GIF integration</li>
-                                <li>Modern, responsive UI design</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="section">
+          <h3>About</h3>
+          <p class="muted">PhD student at Kerala School of Mathematics. Strong math background, learning Python, focused on data science, ML & AI. Interested in research and applied machine learning.</p>
         </div>
-    </div>
 
-    <!-- Messaging Section -->
-    <div id="messaging-section" class="section hidden">
-        <div class="container">
-            <div class="chat-container">
-                <!-- Sidebar -->
-                <div class="sidebar">
-                    <div class="sidebar-header">
-                        <div class="user-profile">
-                            <div class="user-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="user-info">
-                                <span id="current-user">User</span>
-                                <span class="user-status online">Online</span>
-                            </div>
-                        </div>
-                        <button id="logout-btn" class="btn-icon">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="search-container">
-                        <input type="text" id="search-contact" placeholder="Search or add contact...">
-                        <button id="add-contact-btn" class="btn-icon">
-                            <i class="fas fa-user-plus"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="contacts-list">
-                        <h3>Contacts</h3>
-                        <ul id="contacts-list"></ul>
-                    </div>
-                </div>
-                
-                <!-- Chat Area -->
-                <div class="chat-area">
-                    <div class="chat-header">
-                        <div class="chat-partner">
-                            <div class="partner-avatar">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div class="partner-info">
-                                <span id="chat-with">Select a contact</span>
-                                <span id="partner-status" class="partner-status">Offline</span>
-                            </div>
-                        </div>
-                        <div class="chat-actions">
-                            <button id="voice-call-btn" class="btn-icon" disabled>
-                                <i class="fas fa-phone"></i>
-                            </button>
-                            <button id="video-call-btn" class="btn-icon" disabled>
-                                <i class="fas fa-video"></i>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div id="messages-container" class="messages-container">
-                        <div class="welcome-message">
-                            <i class="fas fa-comments"></i>
-                            <h3>Welcome to Universe Pro</h3>
-                            <p>Select a contact to start a secure conversation</p>
-                        </div>
-                    </div>
-                    
-                    <div class="message-input-container">
-                        <div class="input-actions">
-                            <button id="emoji-btn" class="btn-icon">
-                                <i class="fas fa-smile"></i>
-                            </button>
-                            <button id="gif-btn" class="btn-icon">
-                                <i class="fas fa-file-image"></i>
-                            </button>
-                            <button id="attachment-btn" class="btn-icon">
-                                <i class="fas fa-paperclip"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="message-input-wrapper">
-                            <input type="text" id="message-input" placeholder="Type a message..." disabled>
-                            <button id="voice-message-btn" class="btn-icon voice-btn">
-                                <i class="fas fa-microphone"></i>
-                            </button>
-                        </div>
-                        
-                        <button id="send-btn" class="btn-primary" disabled>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                    
-                    <!-- Emoji Picker -->
-                    <div id="emoji-picker" class="emoji-picker hidden">
-                        <div class="emoji-categories">
-                            <button class="emoji-category active" data-category="smileys">😀</button>
-                            <button class="emoji-category" data-category="people">👋</button>
-                            <button class="emoji-category" data-category="animals">🐻</button>
-                            <button class="emoji-category" data-category="food">🍕</button>
-                            <button class="emoji-category" data-category="travel">🚗</button>
-                            <button class="emoji-category" data-category="objects">💡</button>
-                            <button class="emoji-category" data-category="symbols">❤️</button>
-                            <button class="emoji-category" data-category="flags">🎌</button>
-                        </div>
-                        <div class="emoji-container" id="emoji-container">
-                            <!-- Emojis will be loaded here -->
-                        </div>
-                    </div>
-                    
-                    <!-- GIF Picker -->
-                    <div id="gif-picker" class="gif-picker hidden">
-                        <div class="gif-search">
-                            <input type="text" id="gif-search" placeholder="Search GIFs...">
-                            <button id="gif-search-btn">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                        <div class="gif-container" id="gif-container">
-                            <!-- GIFs will be loaded here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="section">
+          <h3>Contact</h3>
+          <p class="muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+          <p class="muted">Location: Kerala, India</p>
         </div>
-    </div>
 
-    <!-- Voice Recorder -->
-    <div id="voice-recorder" class="voice-recorder hidden">
-        <div class="voice-recorder-content">
-            <div class="recording-indicator">
-                <div class="pulse"></div>
-                <span>Recording...</span>
-            </div>
-            <div class="recording-timer">00:00</div>
-            <button id="stop-recording" class="btn-danger">
-                <i class="fas fa-stop"></i> Stop
-            </button>
+        <div class="section">
+          <h3>Skills</h3>
+          <div class="skill"><strong>Python</strong><div class="track"><i style="width:90%"></i></div></div>
+          <div class="skill"><strong>Machine Learning</strong><div class="track"><i style="width:82%"></i></div></div>
+          <div class="skill"><strong>Mathematics</strong><div class="track"><i style="width:95%"></i></div></div>
+          <div class="skill"><strong>Data Analysis</strong><div class="track"><i style="width:78%"></i></div></div>
         </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <script src="script.js"></script>
+        <div class="section">
+          <h3>Languages</h3>
+          <div class="chips">
+            <div class="chip">English</div>
+            <div class="chip">Malayalam</div>
+            <div class="chip">Hindi</div>
+          </div>
+        </div>
+      </aside>
+
+      <section>
+        <div class="card hero">
+          <div class="title">
+            <div>
+              <h2>Hi — I'm <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;">Abhishnav</span>.</h2>
+              <p class="headline">I build models that turn math into insights. Currently pursuing an Integrated PhD at Kerala School of Mathematics.</p>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Open to internships & collaborations</div>
+              <div style="margin-top:12px">⭐  Research · ML · Python</div>
+            </div>
+          </div>
+
+          <div class="chips" aria-hidden>
+            <div class="chip">Research</div>
+            <div class="chip">Deep Learning</div>
+            <div class="chip">Probabilistic Modelling</div>
+            <div class="chip">Optimization</div>
+          </div>
+
+          <div class="timeline">
+            <div class="item">
+              <h4>Integrated PhD — Kerala School of Mathematics</h4>
+              <time>2024 — Present</time>
+              <p>Working on topics at the intersection of mathematics and machine learning.</p>
+            </div>
+
+            <div class="item">
+              <h4>B.Sc / M.Sc (details)</h4>
+              <time>Previously</time>
+              <p>Strong foundation in analysis, algebra and applied mathematics.</p>
+            </div>
+          </div>
+
+          <div class="projects">
+            <div class="project">
+              <h5>Project — Neural ODE experiments</h5>
+              <p class="muted">Applied ODE techniques to deep learning; wrote experiments and reproducible code.</p>
+            </div>
+            <div class="project">
+              <h5>Project — Probabilistic inference toolkit</h5>
+              <p class="muted">Implemented MCMC variants and small-scale Bayesian models for comparison.</p>
+            </div>
+            <div class="project">
+              <h5>Project — Data pipeline</h5>
+              <p class="muted">End-to-end data ingestion, cleaning and basic modeling for a research dataset.</p>
+            </div>
+          </div>
+
+          <div class="cta-row">
+            <button class="primary" onclick="downloadCV()">Download CV</button>
+            <button class="ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Experience & Education</h3>
+          <div class="item">
+            <h4>Researcher / Student</h4>
+            <time>2024 — Present</time>
+            <p>Integrated PhD candidate working on mathematical foundations for ML.</p>
+          </div>
+
+          <div class="item">
+            <h4>Teaching / Assistant roles</h4>
+            <time>Past</time>
+            <p>Assisted undergraduate courses and mentored students in mathematics.</p>
+          </div>
+        </div>
+
+        <div id="contact" class="card" style="margin-top:18px">
+          <h3>Contact</h3>
+          <p class="muted">Want the source files, a tailored CV, or to collaborate? Send a note.</p>
+          <form onsubmit="sendMail(event)">
+            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+              <input name="name" placeholder="Your name" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+              <input name="email" placeholder="Your email" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            </div>
+            <textarea name="message" placeholder="Message" required style="width:100%;margin-top:8px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;min-height:120px"></textarea>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="primary" type="submit">Send</button>
+              <button class="ghost" type="button" onclick="copyEmail()">Copy Email</button>
+            </div>
+          </form>
+          <footer>Or email me directly at <a href="mailto:youremail@example.com">youremail@example.com</a></footer>
+        </div>
+      </section>
+    </main>
+
+    <footer style="opacity:0.9">Built with ❤️ — Want this exported as a PDF or edited? Tell me what to change.</footer>
+  </div>
+
+  <script>
+    function downloadCV(){
+      // placeholder: replace 'resume.pdf' with actual path or trigger server response
+      const link = document.createElement('a');
+      link.href = 'resume.pdf';
+      link.download = 'Abhishnav_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+    function copyEmail(){
+      navigator.clipboard?.writeText('youremail@example.com').then(()=>alert('Email copied to clipboard'))
+    }
+
+    function sendMail(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = encodeURIComponent(form.name.value);
+      const email = encodeURIComponent(form.email.value);
+      const message = encodeURIComponent(form.message.value);
+      const subject = encodeURIComponent('Contact from website — ' + name);
+      window.location.href = `mailto:youremail@example.com?subject=${subject}&body=From:%20${name}%20<${email}>%0A%0A${message}`;
+    }
+  </script>
 </body>
 </html>
